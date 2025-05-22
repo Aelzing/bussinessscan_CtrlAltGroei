@@ -1,14 +1,20 @@
 import streamlit as st
 import json
-from email_validator import validate_email, EmailNotValidError
+import requests
 
-# Load config
-with open("quiz_config.json", "r", encoding="utf-8") as f:
+# 1) Zet hier je echte n8n-webhook-URL
+WEBHOOK_URL = "https://ctrlaltgroei.app.n8n.cloud/webhook/businessscan"
+CONFIG_PATH = "quiz_config.json"
+
+# 2) Laad de vragenlijst-config
+with open(CONFIG_PATH, "r", encoding="utf-8") as f:
     config = json.load(f)
 
 st.set_page_config(page_title="Business Scan", layout="wide")
-responses = {}
+st.title("Business Scan")
 
+# 3) Verzamel de antwoorden
+responses = {}
 for page in config["pages"]:
     st.header(page["title"])
     for q in page["questions"]:
@@ -16,45 +22,32 @@ for page in config["pages"]:
         label = q["label"]
 
         if q["type"] == "select":
-            responses[qid] = st.selectbox(label, q["options"])
-
+            responses[qid] = st.selectbox(label, q["options"], key=qid)
         elif q["type"] == "radio":
-            responses[qid] = st.radio(label, q["options"])
-
+            responses[qid] = st.radio(label, q["options"], key=qid)
         elif q["type"] == "slider":
-            responses[qid] = st.select_slider(label, options=q["labels"])
-
+            responses[qid] = st.select_slider(label, options=q["labels"], key=qid)
         elif q["type"] == "text":
-            responses[qid] = st.text_input(label)
-
+            responses[qid] = st.text_input(label, key=qid)
         elif q["type"] == "email":
-            email_input = st.text_input(label)
-            try:
-                valid = validate_email(email_input)
-                responses[qid] = valid.email
-            except EmailNotValidError:
-                st.error("Ongeldig e-mailadres")
-                responses[qid] = None
-
+            responses[qid] = st.text_input(label, key=qid)
         elif q["type"] == "checkbox":
-            responses[qid] = st.checkbox(label)
+            responses[qid] = st.checkbox(label, key=qid)
 
-    # Scheiding tussen pagina’s
     st.markdown("---")
 
-import requests
-
+# 4) Knop: valideer e-mail en stuur POST
 if st.button("Verzenden"):
-    # validatie e-mail zoals voorheen
-    if not email:
-        st.error("Vul eerst een geldig e-mailadres in.")
+    # Vind e-mail uit responses
+    email = responses.get("email", "").strip()
+    # Eenvoudige validatie
+    if not email or "@" not in email:
+        st.error("Vul eerst een geldig e-mailadres in voordat je verzendt.")
     else:
-        payload = {"responses": responses}
-        # Roep je n8n-webhook aan
-        resp = requests.post("https://ctrlaltgroei.app.n8n.cloud/webhook/businessscan", json={"responses": responses})
-
-        if resp.ok:
-            st.success("Bedankt! Je ontvangt zo snel mogelijk een persoonlijk advies per mail.")
-        else:
-            st.error("Er ging iets mis bij het versturen van je antwoorden.")
-
+        # Verstuur naar n8n
+        try:
+            resp = requests.post(WEBHOOK_URL, json={"responses": responses})
+            resp.raise_for_status()
+            st.success("Je antwoorden zijn succesvol verzonden! 🎉")
+        except Exception as e:
+            st.error(f"Fout bij verzenden naar webhook: {e}")
