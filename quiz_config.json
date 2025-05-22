@@ -1,0 +1,363 @@
+{
+  "pages": [
+    {
+      "title": "Introductie",
+      "questions": [
+        {
+          "id": "functie",
+          "type": "select",
+          "label": "Wat is je functie?",
+          "options": ["CEO", "Manager", "Eigenaar", "Medewerker", "Anders"]
+        },
+        {
+          "id": "branche",
+          "type": "select",
+          "label": "In welke branche ben je actief?",
+          "options": ["Productie", "Retail", "IT", "Dienstverlening", "Gezondheidszorg", "Anders"]
+        },
+        {
+          "id": "omzet_jaar",
+          "type": "select",
+          "label": "Wat is de jaarlijke omzet van afgelopen jaar?",
+          "options": ["0-100k", "100k-500k", "500k-1M", "1M-5M", "5M-25M", ">25M"]
+        },
+        {
+          "id": "aantal_werknemers",
+          "type": "select",
+          "label": "Hoeveel werknemers heeft jouw organisatie?",
+          "options": ["1-10", "11-50", "51-200", "201-500", ">500"]
+        }
+      ]
+    },
+    {
+      "title": "Leiderschap",
+      "questions": [
+        {
+          "id": "gelezen_gevierd",
+          "type": "slider",
+          "label": "Hoe lang geleden dat je iets bij het hele team hebt aangekondigd en gevierd?",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "labels": ["<1 maand", "1-3 maanden", "3-6 maanden", "6-12 maanden", ">1 jaar"]
+        },
+        {
+          "id": "missie_kennen",
+          "type": "radio",
+          "label": "Als we elk teamlid vragen wat de missie van de organisatie is, zou dat lukken?",
+          "options": ["Ja", "Nee"]
+        },
+        {
+          "id": "doelstellingen_kennen",
+          "type": "slider",
+          "label": "Weet iedereen in jouw bedrijf wat de drie belangrijkste doelstellingen zijn voor de financiële groei?",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "labels": ["Zeker van niet", "Weinig zeker", "Neutraal", "Redelijk zeker", "Zeker weten"]
+        },
+        {
+          "id": "missie_begrijpen",
+          "type": "slider",
+          "label": "Begrijpen jij en jouw team hoe de missie van jullie bedrijf het leven van klanten verbetert?",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "labels": ["Nee", "Weinig", "Neutraal", "Grotendeels", "Ja"]
+        },
+        {
+          "id": "waarden_kennen",
+          "type": "slider",
+          "label": "Weten teamleden welke normen en waarden zij moeten naleven?",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "labels": ["Nee te vaag", "Weinig duidelijk", "Neutraal", "Duidelijk", "Ja duidelijk"]
+        },
+        {
+          "id": "bijdrage_begrijpen",
+          "type": "slider",
+          "label": "Begrijpen alle teamleden hoe zij bijdragen aan het succes van het bedrijf?",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "labels": ["Nee", "Weinig", "Neutraal", "Grotendeels", "Ja"]
+        }
+      ]
+    },
+    {
+      "title": "Marketing",
+      "questions": [
+        {
+          "id": "klantprobleem_herkennen",
+          "type": "slider",
+          "label": "Zouden klanten snel het belangrijkste probleem dat je oplost kunnen benoemen?",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "labels": ["Nee erg lastig", "Lastig", "Neutraal", "Makkelijk", "Ja makkelijk"]
+        },
+        {
+          "id": "productprobleem_kennen",
+          "type": "slider",
+          "label": "Kun jij het belangrijkste probleem noemen dat elk van je producten oplost?",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "labels": ["Nee", "Weinig", "Neutraal", "Grotendeels", "Ja"]
+        },
+        {
+          "id": "marketing_beeld",
+          "type": "slider",
+          "label": "Geeft jouw marketing een positief beeld van het leven ná aankoop?",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "labels": ["Nee", "Weinig", "Neutraal", "Grotendeels", "Ja"]
+        },
+        {
+          "id": "klant_held",
+          "type": "slider",
+          "label": "Is de klant de held in jouw marketingtekst?",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "labels": ["Nee", "Weinig", "Neutraal", "Grotendeels", "Ja"]
+        },
+        {
+          "id": "copy_framework",
+          "type": "radio",
+          "label": "Gebruik je een copywriting-framework op productpagina's?",
+          "options": ["Ja, we gebruiken een framework", "Nee, we gebruiken onze intuïtie"]
+        },
+        {
+          "id": "site_updates",
+          "type": "slider",
+          "label": "Hoe lang geleden dat je updates hebt gemaakt op je website?",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "labels": ["<1 maand", "1-3 maanden", "3-6 maanden", "6-12 maanden", ">1 jaar"]
+        }
+      ]
+    },
+    {
+      "title": "Sales",
+      "questions": [
+        {
+          "id": "focus_eigenschappen_vs_oplossingen",
+          "type": "slider",
+          "label": "Spreekt je verkoopteam vaker over eigenschappen of oplossingen?",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "labels": ["1 Eigenschap", "2", "3", "4", "5 Oplossing"]
+        },
+        {
+          "id": "offerte_template",
+          "type": "radio",
+          "label": "Gebruik je een standaard sjabloon voor offertes?",
+          "options": ["Ja, we hebben een sjabloon", "Nee, we hebben geen sjabloon"]
+        },
+        {
+          "id": "sales_scripts",
+          "type": "slider",
+          "label": "Beschikken jullie over duidelijke sales scripts?",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "labels": ["Nee", "Weinig", "Neutraal", "Grotendeels", "Ja"]
+        },
+        {
+          "id": "klant_betrokkenheid",
+          "type": "slider",
+          "label": "Zijn klanten direct betrokken en geïnteresseerd?",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "labels": ["Nee zelden", "Soms", "Neutraal", "Vaak", "Ja altijd"]
+        },
+        {
+          "id": "vragen_om_geld",
+          "type": "slider",
+          "label": "Hoe makkelijk vind je het om om verkoop of extra kosten te vragen?",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "labels": ["1 Hekel aan", "2", "3", "4", "5 Doe ik graag"]
+        }
+      ]
+    },
+    {
+      "title": "Product",
+      "questions": [
+        {
+          "id": "nieuw_product_gepresenteerd",
+          "type": "slider",
+          "label": "Hoe lang geleden dat je een nieuw product hebt gepresenteerd?",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "labels": ["1 Geen idee", "2", "3", "4", "5 Afgelopen 12 maanden"]
+        },
+        {
+          "id": "screeningsproces",
+          "type": "radio",
+          "label": "Voert jouw team vóór lancering een screeningsproces uit?",
+          "options": ["Ja", "Nee"]
+        },
+        {
+          "id": "kernboodschap_focus",
+          "type": "slider",
+          "label": "Focust het team vóór lancering op de kernboodschap?",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "labels": ["Nee", "Weinig", "Neutraal", "Grotendeels", "Ja"]
+        },
+        {
+          "id": "abonnement_product",
+          "type": "radio",
+          "label": "Heb je een abonnementsproduct met terugkerende inkomsten?",
+          "options": ["Ja, we hebben een abonnement", "Nee, klinkt interessant", "Nee, lastig voor ons"]
+        },
+        {
+          "id": "winstgevendheidslijst",
+          "type": "slider",
+          "label": "Hoe vaak maak je een lijst van producten op winstgevendheid?",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "labels": ["Nooit", "Eenmalig", "Jaarlijks", "Halfjaarlijks", "Elk kwartaal"]
+        },
+        {
+          "id": "product_flops",
+          "type": "radio",
+          "label": "Heb je ooit verspild aan een niet-winstgevend product?",
+          "options": ["Ja, meerdere flops", "Nee, doorgaans succesvol"]
+        }
+      ]
+    },
+    {
+      "title": "Overhead & Operations",
+      "questions": [
+        {
+          "id": "oprichter_of_niet",
+          "type": "select",
+          "label": "Ben jij oprichter of kwam je later?",
+          "options": ["Ik ben oprichter", "Ik ben er later bijgekomen", "Ik heb een franchise"]
+        },
+        {
+          "id": "prioriteiten_kennen",
+          "type": "slider",
+          "label": "Weet ieder teamlid wat zijn/haar prioriteiten zijn?",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "labels": ["Zeker niet", "Weinig", "Neutraal", "Grotendeels", "Zeker weten"]
+        },
+        {
+          "id": "focus_verkeerd_dingen",
+          "type": "radio",
+          "label": "Kom je teamleden tegen die hard werken maar fout focussen?",
+          "options": ["Ja", "Nee"]
+        },
+        {
+          "id": "regelmatige_feedback",
+          "type": "slider",
+          "label": "Krijgt ieder lid regelmatig feedback?",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "labels": ["Absoluut niet", "Soms", "Neutraal", "Grotendeels", "Absoluut wel"]
+        },
+        {
+          "id": "vergaderingen_routinematig",
+          "type": "slider",
+          "label": "Vinden vergaderingen routinematig plaats?",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "labels": ["Geen routine", "Soms", "Neutraal", "Vaak", "Routinematig"]
+        },
+        {
+          "id": "beoordelingsgesprek",
+          "type": "radio",
+          "label": "Krijgt iedereen elk kwartaal een beoordelingsgesprek?",
+          "options": ["Ja", "Nee"]
+        }
+      ]
+    },
+    {
+      "title": "Cash Flow",
+      "questions": [
+        {
+          "id": "verantwoordelijke_financien",
+          "type": "radio",
+          "label": "Ben jij verantwoordelijk voor financiële beslissingen?",
+          "options": ["Ja", "Nee"]
+        },
+        {
+          "id": "vast_salaris",
+          "type": "radio",
+          "label": "Betaal je jezelf een vast salaris?",
+          "options": ["Ja, volwaardig salaris", "Nee, deels of niet", "Ik ben geen eigenaar"]
+        },
+        {
+          "id": "belasting_verrast",
+          "type": "radio",
+          "label": "Ben je ooit verrast door een belastingaanslag?",
+          "options": ["Ja, recent gebeurd", "Nee, ik weet wat komt"]
+        },
+        {
+          "id": "financiële_reserve",
+          "type": "radio",
+          "label": "Is er reserve voor 5-6 maanden kosten?",
+          "options": ["Ja, buffer aanwezig", "Nee, geen buffer"]
+        },
+        {
+          "id": "gescheiden_rekeningen",
+          "type": "radio",
+          "label": "Heb je aparte rekeningen voor kosten en salaris?",
+          "options": ["Ja, gescheiden", "Nee, niet gescheiden"]
+        },
+        {
+          "id": "bezorgd_salaris",
+          "type": "radio",
+          "label": "Heb je je ooit zorgen gemaakt over het betalen van salarissen?",
+          "options": [
+            "Ja, gebeurt regelmatig",
+            "Ja, in het verleden gebeurd",
+            "Nee, geen zorgen"
+          ]
+        },
+        {
+          "id": "plan_extra_winst",
+          "type": "radio",
+          "label": "Heb je een plan voor extra winst?",
+          "options": ["Nee, geen plan", "Ja, investeringsplan"]
+        }
+      ]
+    },
+    {
+      "title": "Einde",
+      "questions": [
+        {
+          "id": "naam",
+          "type": "text",
+          "label": "Naam"
+        },
+        {
+          "id": "email",
+          "type": "email",
+          "label": "E-mailadres"
+        },
+        {
+          "id": "toestemming",
+          "type": "checkbox",
+          "label": "Ik ga akkoord dat mijn informatie gebruikt wordt door CtrlAltGroeI"
+        }
+      ]
+    }
+  ]
+}
