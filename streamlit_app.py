@@ -51,7 +51,8 @@ if st.button("Verzenden"):
     else:
         payload = {"responses": responses}
         # Roep je n8n-webhook aan
-        resp = requests.post("https://ctrlaltgroei.app.n8n.cloud/webhook/businessscan", json=payload)
+        resp = requests.post("https://ctrlaltgroei.app.n8n.cloud/webhook/businessscan", json={"responses": responses})
+
         if resp.ok:
             st.success("Bedankt! Je ontvangt zo snel mogelijk een persoonlijk advies per mail.")
         else:
