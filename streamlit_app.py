@@ -42,11 +42,18 @@ for page in config["pages"]:
     # Scheiding tussen pagina’s
     st.markdown("---")
 
+import requests
+
 if st.button("Verzenden"):
-    # Check of e-mail correct is ingevuld
-    email = responses.get("email")
+    # validatie e-mail zoals voorheen
     if not email:
-        st.error("Vul eerst een geldig e-mailadres in voordat je verzendt.")
+        st.error("Vul eerst een geldig e-mailadres in.")
     else:
-        st.success("Bedankt voor je antwoorden!")
-        st.json(responses)
+        payload = {"responses": responses}
+        # Roep je n8n-webhook aan
+        resp = requests.post("https://<jouw-n8n-url>/webhook/businessscan", json=payload)
+        if resp.ok:
+            st.success("Bedankt! Je ontvangt zo snel mogelijk een persoonlijk advies per mail.")
+        else:
+            st.error("Er ging iets mis bij het versturen van je antwoorden.")
+
